@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <p>
+        {{movie}} was released in {{year}}. It was {% if not is_scary %}{% endif %}scary.
+    </p>
+
+    <p>
+        {% if color %}
+            Color
+        {% else %}
+            Black and white
+        {% endif %}
+    </p>
+
+    <p>
+        {% if THX %}
+            sound was awesome
+        {% endif %}
+
+    <p>
+        {% if tomato_meter > tomato_audience %}
+            Critics liked it better than audience
+        {% elif tomato_meter == tomato_audience %}
+            Critics liked it the same sa audience
+        {% else %}
+            The audience liked it better than the Critics
+        {% endif %}
+    </p>
+
+    <p> Copyright <b>MoviePalace</b></p>
+
+
+{% endblock content %}
+
